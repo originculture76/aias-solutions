@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.I.A.S. Solutions | أنظمة الذكاء الاصطناعي وأتمتة الأعمال</title>
+    <!-- استدعاء خط عربي أنيق -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        body {
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            line-height: 1.6;
+        }
+        header {
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #38bdf8;
+            letter-spacing: 1px;
+        }
+        .hero {
+            padding: 180px 20px 100px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 20px;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+        .cta-btn {
+            background: linear-gradient(135deg, #0284c7, #4f46e5);
+            color: white;
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+        }
+        .features {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+        .feature-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #f8fafc;
+        }
+        .feature-card p {
+            color: #94a3b8;
+        }
+        .booking-section {
+            max-width: 700px;
+            margin: 100px auto;
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .booking-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #38bdf8;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #64748b;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">A.I.A.S. Solutions</div>
+            <a href="#booking" class="cta-btn" style="padding: 10px 20px; font-size: 14px;">احجز استشارتك</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>هندسة المستقبل بالذكاء الاصطناعي وأتمتة العمليات</h1>
+        <p>نساعد الشركات الكبرى والعقارية في دبي والعالم على مضاعفة كفاءتها التشغيلية عبر أنظمة ذكية تعمل على مدار الساعة.</p>
+        <a href="#booking" class="cta-btn">ابدأ رحلة التحول الذكي</a>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>🤖 مساعدات ذكية 24/7</h3>
+            <p>نظام محادثة آلي يفهم العملاء، يجيب عن استفساراتهم العقارية بدقة، ويسجل طلباتهم فوراً دون تدخل بشرى.</p>
+        </div>
+        <div class="feature-card">
+            <h3>⚡ أتمتة سير العمل</h3>
+            <p>ربط قواعد البيانات، رسائل البريد، وحجوزات المواعيد في منظومة واحدة متكاملة وسريعة للغاية.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📈 نمو وأرباح مضاعفة</h3>
+            <p>قلل التكاليف التشغيلية بنجاح ووجه طاقات فريقك نحو إتمام الصفقات الكبرى بدلاً من المهام الروتينية.</p>
+        </div>
+    </section>
+
+    <div class="booking-section" id="booking">
+        <h2>احجز موعد استشارتك الاستراتيجية</h2>
+        <form onsubmit="alert('تم إرسال طلبك بنجاح! سنتواصل معك قريباً لتأكيد الموعد.'); return false;">
+            <div class="form-group">
+                <label>الاسم الكريم</label>
+                <input type="text" required placeholder="أدخل اسمك الكامل">
+            </div>
+            <div class="form-group">
+                <label>اسم الشركة أو المؤسسة</label>
+                <input type="text" required placeholder="مثال: شركة العقارات المتميزة">
+            </div>
+            <div class="form-group">
+                <label>البريد الإلكتروني للعمل</label>
+                <input type="email" required placeholder="name@company.com">
+            </div>
+            <button type="submit" class="cta-btn" style="width: 100%; margin-top: 10px;">تأكيد وحجز الموعد</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - A.I.A.S. Solutions</p>
+    </footer>
+
+</body>
+</html>
