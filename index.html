@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIAS-Solutions | الحلول الرقمية المتقدمة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #3b82f6;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #3b82f6;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, #1e293b 0%, #0b0f19 70%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            max-width: 800px;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            color: #3b82f6;
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #9ca3af;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        .services {
+            padding: 100px 8%;
+            background: #0f172a;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 60px;
+            color: #ffffff;
+        }
+
+        .section-title span {
+            color: #3b82f6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 16px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .service-card p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #0b0f19;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">AIAS<span>-Solutions</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="cta-btn">ابدأ مشروعك</a>
+    </header>
+
+    <section class="hero">
+        <h1>نبني المستقبل الرقمي لشركتك بذكاء وإبداع <span>AIAS-Solutions</span></h1>
+        <p>نقدم حلولاً برمجية وتقنية متقدمة تلبي تطلعاتك وتساعد عملك على النمو والتوسع بكفاءة لا مثيل لها.</p>
+        <div class="hero-buttons">
+            <a href="#services" class="cta-btn">استكشف خدماتنا</a>
+            <a href="#contact" class="btn-secondary">تواصل معنا</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">خدماتنا <span>الاحترافية</span></h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>تطوير الويب والمنصات</h3>
+                <p>نبني مواقع وتطبيقات ويب سريعة، آمنة، وذات واجهات مستخدم مذهلة ومصممة خصيصاً لعملك.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-brain"></i>
+                <h3>حلول الذكاء الاصطناعي</h3>
+                <p>نوظف أحدث تقنيات الذكاء الاصطناعي لأتمتة عملياتك وتحسين تجربة عملائك بشكل غير معتاد.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>البنية التحتية والاستضافة</h3>
+                <p>نوفر حلول استضافة سحابية فائقة السرعة مع حماية عالية الأمان لضمان استمرارية أعمالك دون توقف.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AIAS-Solutions. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>
