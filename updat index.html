@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الأتمتة الذكية للشركات</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131b2e;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --accent-blue: #0066ff;
+            --accent-hover: #0052cc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--accent-blue);
+        }
+
+        .lang-btn {
+            background: var(--accent-blue);
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .cta-btn {
+            background: var(--accent-blue);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .services {
+            padding: 80px 8%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط التنقل العلوي -->
+    <header>
+        <div class="logo" id="logo-text">أتمتة<span>.</span></div>
+        <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">EN</button>
+    </header>
+
+    <!-- القسم الرئيسي (Hero) -->
+    <section class="hero">
+        <h1 id="hero-title">أتمتة عملياتك، مضاعفة إنتاجيتك بلا حدود.</h1>
+        <p id="hero-desc">نساعد الشركات والمؤسسات في الخليج والعالم على تحويل عملياتها اليدوية إلى أنظمة ذكية ومُأتمتة بالكامل، لتوفير الوقت وتقليل التكاليف.</p>
+        <a href="#contact" class="cta-btn" id="hero-btn">ابدأ الآن / تواصل معنا</a>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section class="services">
+        <div class="service-card">
+            <h3 id="serv1-title">أتمتة سير العمل</h3>
+            <p id="serv1-desc">ربط التطبيقات والأنظمة معاً بسلاسة تامة لتجنب المهام المتكررة وضمان سرعة الإنجاز.</p>
+        </div>
+        <div class="service-card">
+            <h3 id="serv2-title">المعالجة الذكية للبيانات</h3>
+            <p id="serv2-desc">تحليل وتنظيم البيانات بدقة عالية ودون أي تدخل بشري لتعزيز كفاءة اتخاذ القرار.</p>
+        </div>
+        <div class="service-card">
+            <h3 id="serv3-title">التكامل الآمن</h3>
+            <p id="serv3-desc">ربط بوابات الدفع والخدمات السحابية بأعلى معايير الأمان والحماية الموثوقة للشركات.</p>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <p id="footer-text">جميع الحقوق محفوظة © 2026 - منصة الأتمتة الذكية</p>
+    </footer>
+
+    <!-- سكربت التبديل بين اللغات -->
+    <script>
+        let isArabic = true;
+
+        function toggleLanguage() {
+            const htmlTag = document.documentElement;
+            const langBtn = document.getElementById('langToggle');
+            
+            const logoText = document.getElementById('logo-text');
+            const heroTitle = document.getElementById('hero-title');
+            const heroDesc = document.getElementById('hero-desc');
+            const heroBtn = document.getElementById('hero-btn');
+
+            const serv1Title = document.getElementById('serv1-title');
+            const serv1Desc = document.getElementById('serv1-desc');
+            const serv2Title = document.getElementById('serv2-title');
+            const serv2Desc = document.getElementById('serv2-desc');
+            const serv3Title = document.getElementById('serv3-title');
+            const serv3Desc = document.getElementById('serv3-desc');
+            const footerText = document.getElementById('footer-text');
+
+            if (isArabic) {
+                // التحويل إلى اللغة الإنجليزية (LTR)
+                htmlTag.setAttribute('lang', 'en');
+                htmlTag.setAttribute('dir', 'ltr');
+                langBtn.innerText = "عربي";
+
+                logoText.innerHTML = "Auto<span>.</span>";
+                heroTitle.innerText = "Automate your workflows, scale your productivity.";
+                heroDesc.innerText = "Empowering enterprises in the Gulf and globally to transform manual operations into fully smart, automated systems that save time and reduce costs.";
+                heroBtn.innerText = "Get Started / Contact Us";
+
+                serv1Title.innerText = "Workflow Automation";
+                serv1Desc.innerText = "Seamlessly connect applications and systems to eliminate repetitive tasks and ensure fast execution.";
+
+                serv2Title.innerText = "Smart Data Processing";
+                serv2Desc.innerText = "Analyze and organize data with high precision without manual intervention to boost decision-making.";
+
+                serv3Title.innerText = "Secure Integration";
+                serv3Desc.innerText = "Connect payment gateways and cloud services with top-tier security standards for enterprises.";
+
+                footerText.innerText = "All Rights Reserved © 2026 - Smart Automation Platform";
+
+                isArabic = false;
+            } else {
+                // العودة إلى اللغة العربية (RTL)
+                htmlTag.setAttribute('lang', 'ar');
+                htmlTag.setAttribute('dir', 'rtl');
+                langBtn.innerText = "EN";
+
+                logoText.innerHTML = "أتمتة<span>.</span>";
+                heroTitle.innerText = "أتمتة عملياتك، مضاعفة إنتاجيتك بلا حدود.";
+                heroDesc.innerText = "نساعد الشركات والمؤسسات في الخليج والعالم على تحويل عملياتها اليدوية إلى أنظمة ذكية ومُأتمتة بالكامل، لتوفير الوقت وتقليل التكاليف.";
+                heroBtn.innerText = "ابدأ الآن / تواصل معنا";
+
+                serv1Title.innerText = "أتمتة سير العمل";
+                serv1Desc.innerText = "ربط التطبيقات والأنظمة معاً بسلاسة تامة لتجنب المهام المتكررة وضمان سرعة الإنجاز.";
+
+                serv2Title.innerText = "المعالجة الذكية للبيانات";
+                serv2Desc.innerText = "تحليل وتنظيم البيانات بدقة عالية ودون أي تدخل بشري لتعزيز كفاءة اتخاذ القرار.";
+
+                serv3Title.innerText = "التكامل الآمن";
+                serv3Desc.innerText = "ربط بوابات الدفع والخدمات السحابية بأعلى معايير الأمان والحماية الموثوقة للشركات.";
+
+                footerText.innerText = "جميع الحقوق محفوظة © 2026 - منصة الأتمتة الذكية";
+
+                isArabic = true;
+            }
+        }
+    </script>
+</body>
+</html>
