@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="pageRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="tTitle">AIAS-Solutions | وحش المبيعات العقاري الذكي</title>
+<meta name="description" id="metaDesc" content="بوت مبيعات عقاري بالذكاء الاصطناعي يؤهل عملاءك تلقائياً على مدار الساعة لشركات العقارات في دبي والرياض.">
+<meta name="theme-color" content="#05070d">
+<!-- ⚠️ استبدل aias-solutions.com بدومينك الفعلي بعد النشر على Vercel حتى تعمل صور المعاينة بشكل صحيح -->
+<link rel="canonical" href="https://aias-solutions.com/">
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aias-solutions.com/">
+<meta property="og:title" id="ogTitle" content="AIAS-Solutions | وحش المبيعات العقاري الذكي">
+<meta property="og:description" id="ogDesc" content="بوت مبيعات عقاري بالذكاء الاصطناعي يؤهل عملاءك تلقائياً على مدار الساعة لشركات العقارات في دبي والرياض.">
+<meta property="og:image" content="https://aias-solutions.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ar_AE">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twTitle" content="AIAS-Solutions | وحش المبيعات العقاري الذكي">
+<meta name="twitter:description" id="twDesc" content="بوت مبيعات عقاري بالذكاء الاصطناعي يؤهل عملاءك تلقائياً على مدار الساعة لشركات العقارات في دبي والرياض.">
+<meta name="twitter:image" content="https://aias-solutions.com/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          void: '#05070d',
+          navy: '#0a1120',
+          navy2: '#0d1830',
+          neon: '#2fe2ff',
+          neondeep: '#0ea5e9',
+          ink: '#c7d2e0',
+          muted: '#8a97ad'
+        },
+        fontFamily: {
+          cairo: ['Cairo', 'sans-serif'],
+          grotesk: ['Space Grotesk', 'sans-serif']
+        },
+        boxShadow: {
+          neon: '0 0 0 1px rgba(47,226,255,0.25), 0 0 30px rgba(47,226,255,0.25)',
+          neonlg: '0 0 0 1px rgba(47,226,255,0.35), 0 0 60px rgba(47,226,255,0.35)'
+        }
+      }
+    }
+  };
+</script>
+
+<style>
+  * { font-family: 'Cairo', sans-serif; }
+  .font-grotesk { font-family: 'Space Grotesk', sans-serif; }
+  html { scroll-behavior: smooth; }
+  body { background: #05070d; }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(47,226,255,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(47,226,255,0.06) 1px, transparent 1px);
+    background-size: 46px 46px;
+  }
+  .radial-glow {
+    background: radial-gradient(circle at 50% 0%, rgba(47,226,255,0.16), transparent 55%);
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 1px rgba(47,226,255,0.3), 0 0 25px rgba(47,226,255,0.25); }
+    50% { box-shadow: 0 0 0 1px rgba(47,226,255,0.55), 0 0 45px rgba(47,226,255,0.45); }
+  }
+  .animate-pulseGlow { animation: pulseGlow 2.6s ease-in-out infinite; }
+
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .animate-floatY { animation: floatY 5s ease-in-out infinite; }
+
+  @keyframes caretBlink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+  .caret { animation: caretBlink 0.9s step-start infinite; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.6s ease forwards; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  .score-ring {
+    background: conic-gradient(#2fe2ff calc(var(--pct,0) * 1%), rgba(255,255,255,0.08) 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      transition-duration: .01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  ::selection { background: rgba(47,226,255,0.3); }
+
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid #2fe2ff;
+    outline-offset: 3px;
+  }
+</style>
+</head>
+
+<body class="bg-void text-ink antialiased">
+
+<!-- ============ HEADER ============ -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-void/80 border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-neon to-neondeep flex items-center justify-center shadow-neon">
+        <i class="fa-solid fa-bolt text-void text-sm"></i>
+      </div>
+      <span class="font-grotesk font-bold text-lg text-white tracking-tight">AIAS<span class="text-neon">-Solutions</span></span>
+    </div>
+
+    <div class="flex items-center gap-3 md:gap-5">
+      <a href="#" id="navLogin" class="hidden sm:inline text-sm text-muted hover:text-white transition-colors">تسجيل الدخول</a>
+      <button onclick="switchLanguage()" id="langBtn" class="text-xs md:text-sm font-bold px-3 md:px-4 py-2 rounded-full border border-neon/30 text-neon bg-neon/5 hover:bg-neon hover:text-void transition-all">English</button>
+      <a href="#demo" id="navCta" class="hidden sm:inline-flex items-center gap-2 text-xs md:text-sm font-bold px-4 md:px-5 py-2.5 rounded-full bg-gradient-to-r from-neon to-neondeep text-void shadow-neon hover:shadow-neonlg transition-all">
+        احجز عرضاً تجريبياً
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="relative overflow-hidden bg-grid radial-glow pt-40 pb-28 px-6 lg:px-10">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-40 -right-40 w-[520px] h-[520px] bg-neon/10 rounded-full blur-[120px]"></div>
+    <div class="absolute -bottom-32 -left-32 w-[420px] h-[420px] bg-neondeep/10 rounded-full blur-[120px]"></div>
+  </div>
+
+  <!-- خط أفق دبي/الرياض التجريدي -->
+  <svg class="absolute bottom-0 inset-x-0 w-full h-24 md:h-32 opacity-[0.15]" viewBox="0 0 1200 140" preserveAspectRatio="none" fill="none">
+    <path d="M0,140 L0,90 L40,90 L40,60 L60,60 L60,90 L90,90 L90,20 L110,20 L110,0 L120,0 L120,20 L130,90 L170,90 L170,70 L190,70 L190,90 L230,90 L230,40 L250,40 L250,90 L300,90 L300,55 L320,55 L320,10 L335,10 L335,55 L350,55 L350,90 L400,90 L400,65 L420,65 L420,90 L470,90 L470,30 L490,30 L490,90 L540,90 L540,75 L560,75 L560,90 L620,90 L620,45 L640,45 L640,90 L700,90 L700,15 L715,15 L715,0 L725,0 L725,15 L735,90 L780,90 L780,60 L800,60 L800,90 L850,90 L850,35 L870,35 L870,90 L920,90 L920,70 L940,70 L940,90 L1000,90 L1000,50 L1020,50 L1020,90 L1080,90 L1080,25 L1100,25 L1100,90 L1200,90 L1200,140 Z" fill="#2fe2ff"/>
+  </svg>
+
+  <div class="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <!-- نص الهيرو -->
+    <div class="fade-up">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neon/25 bg-neon/5 text-neon text-xs md:text-sm font-bold mb-7">
+        <span class="w-1.5 h-1.5 rounded-full bg-neon animate-pulseGlow"></span>
+        <span id="heroEyebrow">مبني خصيصاً لسوق العقارات في دبي والرياض</span>
+      </div>
+
+      <h1 id="heroTitle" class="text-4xl md:text-5xl xl:text-6xl font-black leading-[1.2] text-white mb-6">
+        بوت عقاري ذكي يضاعف مبيعاتك <span class="text-transparent bg-clip-text bg-gradient-to-l from-neon to-neondeep">ولا يترك عميلاً بلا رد</span>
+      </h1>
+
+      <p id="heroDesc" class="text-base md:text-lg text-muted leading-relaxed max-w-xl mb-9">
+        AIAS-Solutions يبني لك مساعد مبيعات بالذكاء الاصطناعي يتحدث لغة السوق العقاري، يفهم مشاريع الأوف-بلان وجداول الدفع، ويؤهّل كل عميل محتمل تلقائياً على واتساب وموقعك — على مدار الساعة.
+      </p>
+
+      <div class="flex flex-wrap gap-4 mb-12">
+        <a href="#demo" id="ctaPrimary" class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-gradient-to-r from-neon to-neondeep text-void font-extrabold shadow-neonlg hover:-translate-y-0.5 transition-all">
+          احجز عرضاً تجريبياً مجانياً
+          <i class="fa-solid fa-arrow-left rtl:fa-arrow-left"></i>
+        </a>
+        <a href="#features" id="ctaSecondary" class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-white/15 text-white font-bold hover:border-neon/40 hover:text-neon transition-all">
+          جرّب البوت العقاري الآن
+        </a>
+      </div>
+
+      <div class="grid grid-cols-3 gap-6 max-w-lg border-t border-white/10 pt-8">
+        <div>
+          <div class="font-grotesk text-2xl md:text-3xl font-bold text-white">+35%</div>
+          <div id="stat1" class="text-xs md:text-sm text-muted mt-1">ارتفاع نسبة تأهيل العملاء</div>
+        </div>
+        <div>
+          <div class="font-grotesk text-2xl md:text-3xl font-bold text-white">&lt;3<span class="text-base">ث</span></div>
+          <div id="stat2" class="text-xs md:text-sm text-muted mt-1">وقت الرد الأول</div>
+        </div>
+        <div>
+          <div class="font-grotesk text-2xl md:text-3xl font-bold text-white">24/7</div>
+          <div id="stat3" class="text-xs md:text-sm text-muted mt-1">تغطية كاملة بلا توقف</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- بطاقة العرض التفاعلية (العنصر المميز) -->
+    <div class="relative fade-up" style="animation-delay:.15s">
+      <div class="animate-floatY">
+        <div class="rounded-2xl border border-white/10 bg-navy2/70 backdrop-blur-xl p-5 shadow-2xl max-w-sm mx-auto">
+          <div class="flex items-center gap-2 pb-4 mb-4 border-b border-white/10">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            <span class="text-xs text-muted" id="demoLabel">محادثة مباشرة — واتساب</span>
+          </div>
+
+          <!-- فقاعة رسالة العميل -->
+          <div class="bg-white/[0.06] rounded-2xl rounded-tr-sm px-4 py-3 text-sm text-ink mb-4 min-h-[64px]">
+            <span id="typingText"></span><span class="caret text-neon">|</span>
+          </div>
+
+          <!-- بطاقة العميل المؤهل -->
+          <div id="leadCard" class="opacity-0 translate-y-3 transition-all duration-700 rounded-xl border border-neon/30 bg-neon/[0.06] p-4">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neon/15 text-neon" id="leadBadge">🔥 جاهز للاتصال</span>
+              <div class="relative w-11 h-11 rounded-full score-ring" style="--pct:92">
+                <div class="absolute inset-[3px] rounded-full bg-navy2 flex items-center justify-center font-grotesk text-[11px] font-bold text-white">92%</div>
+              </div>
+            </div>
+            <div class="space-y-1.5 text-xs">
+              <div class="flex justify-between"><span class="text-muted" id="leadL1">الميزانية</span><span class="text-white font-semibold">2,000,000 AED</span></div>
+              <div class="flex justify-between"><span class="text-muted" id="leadL2">المشروع</span><span class="text-white font-semibold">Creek Harbour</span></div>
+              <div class="flex justify-between"><span class="text-muted" id="leadL3">القناة</span><span class="text-white font-semibold">WhatsApp</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="features" class="relative py-28 px-6 lg:px-10 bg-navy border-y border-white/5">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <span class="text-neon text-sm font-bold tracking-wide" id="fEyebrow">لماذا AIAS-Solutions</span>
+      <h2 id="fTitle" class="text-3xl md:text-4xl font-black text-white mt-3">مصمم لسوق العقارات الخليجي تحديداً</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="reveal group p-8 rounded-2xl border border-white/10 bg-navy2/60 hover:border-neon/30 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-neon/10 border border-neon/20 flex items-center justify-center mb-5 group-hover:shadow-neon transition-all">
+          <i class="fa-solid fa-city text-neon"></i>
+        </div>
+        <h3 id="c1Title" class="text-lg font-bold text-white mb-2">يفهم لهجة السوق ومصطلحات الأوف-بلان</h3>
+        <p id="c1Desc" class="text-sm text-muted leading-relaxed">يتعامل البوت بلهجة عربية خليجية طبيعية، ويفهم مصطلحات مثل "أوف-بلان" وجداول الدفع ونسب الـROI لكل مشروع دون أي التباس.</p>
+      </div>
+
+      <div class="reveal group p-8 rounded-2xl border border-white/10 bg-navy2/60 hover:border-neon/30 transition-all" style="transition-delay:.05s">
+        <div class="w-12 h-12 rounded-xl bg-neon/10 border border-neon/20 flex items-center justify-center mb-5 group-hover:shadow-neon transition-all">
+          <i class="fa-solid fa-filter text-neon"></i>
+        </div>
+        <h3 id="c2Title" class="text-lg font-bold text-white mb-2">تصفية العملاء الجادين تلقائياً</h3>
+        <p id="c2Desc" class="text-sm text-muted leading-relaxed">يميّز البوت من أول رسالة بين المتصفح والعميل الجاد عبر أسئلة ذكية عن الميزانية والجدول الزمني، ويمنح كل عميل درجة جاهزية فورية.</p>
+      </div>
+
+      <div class="reveal group p-8 rounded-2xl border border-white/10 bg-navy2/60 hover:border-neon/30 transition-all" style="transition-delay:.1s">
+        <div class="w-12 h-12 rounded-xl bg-neon/10 border border-neon/20 flex items-center justify-center mb-5 group-hover:shadow-neon transition-all">
+          <i class="fa-solid fa-id-card-clip text-neon"></i>
+        </div>
+        <h3 id="c3Title" class="text-lg font-bold text-white mb-2">تسليم بطاقة عميل جاهزة للاتصال</h3>
+        <p id="c3Desc" class="text-sm text-muted leading-relaxed">بمجرد تأهيل العميل، تصل فريق المبيعات بطاقة كاملة (الاسم، الميزانية، المشروع، القناة) جاهزة للاتصال المباشر دون أي وقت ضائع.</p>
+      </div>
+
+      <div class="reveal group p-8 rounded-2xl border border-white/10 bg-navy2/60 hover:border-neon/30 transition-all" style="transition-delay:.15s">
+        <div class="w-12 h-12 rounded-xl bg-neon/10 border border-neon/20 flex items-center justify-center mb-5 group-hover:shadow-neon transition-all">
+          <i class="fa-solid fa-shield-halved text-neon"></i>
+        </div>
+        <h3 id="c4Title" class="text-lg font-bold text-white mb-2">ممتثل لأنظمة الخصوصية الخليجية (PDPL)</h3>
+        <p id="c4Desc" class="text-sm text-muted leading-relaxed">يعمل البوت وفق أنظمة حماية البيانات الشخصية في الإمارات والسعودية، مع تشفير كامل لبيانات العملاء وسجل موافقات واضح.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEMO / CONTACT ============ -->
+<section id="demo" class="relative py-28 px-6 lg:px-10 bg-void radial-glow">
+  <div class="max-w-2xl mx-auto reveal">
+    <div class="text-center mb-10">
+      <span class="text-neon text-sm font-bold tracking-wide" id="dEyebrow">جاهز للبدء؟</span>
+      <h2 id="dTitle" class="text-3xl md:text-4xl font-black text-white mt-3 mb-4">فعّل وحش المبيعات في شركتك خلال 48 ساعة</h2>
+      <p id="dDesc" class="text-muted">املأ البيانات وسيتواصل معك فريقنا لجدولة عرض تجريبي مخصص على بيانات مشاريعك العقارية.</p>
+    </div>
+
+    <form id="demoForm" novalidate class="rounded-2xl border border-white/10 bg-navy2/60 backdrop-blur-xl p-8 md:p-10">
+      <div class="hp-field absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+        <label for="company_website">Company Website</label>
+        <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="grid gap-5 mb-6">
+        <div id="grpName">
+          <label id="lblName" for="dName" class="block text-sm font-semibold text-ink mb-2">الاسم الكامل</label>
+          <input type="text" id="dName" name="name" required placeholder="اسمك الكامل" class="w-full bg-white/[0.04] border border-white/10 focus:border-neon/50 rounded-xl px-4 py-3.5 text-white placeholder:text-muted/60 outline-none transition-colors">
+          <span class="error-msg hidden text-xs text-red-400 mt-1.5 block" id="errName">يرجى إدخال الاسم</span>
+        </div>
+        <div>
+          <label id="lblCompany" for="dCompany" class="block text-sm font-semibold text-ink mb-2">اسم الشركة العقارية</label>
+          <input type="text" id="dCompany" name="company" placeholder="مثال: عقارات النخبة" class="w-full bg-white/[0.04] border border-white/10 focus:border-neon/50 rounded-xl px-4 py-3.5 text-white placeholder:text-muted/60 outline-none transition-colors">
+        </div>
+        <div id="grpPhone">
+          <label id="lblPhone" for="dPhone" class="block text-sm font-semibold text-ink mb-2">رقم الهاتف / واتساب</label>
+          <input type="tel" id="dPhone" name="phone" required placeholder="+971 5X XXX XXXX" class="w-full bg-white/[0.04] border border-white/10 focus:border-neon/50 rounded-xl px-4 py-3.5 text-white placeholder:text-muted/60 outline-none transition-colors" dir="ltr">
+          <span class="error-msg hidden text-xs text-red-400 mt-1.5 block" id="errPhone">يرجى إدخال رقم صحيح</span>
+        </div>
+      </div>
+
+      <button type="submit" id="submitBtn" class="w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-neon to-neondeep text-void font-extrabold shadow-neonlg hover:-translate-y-0.5 transition-all">
+        <span class="spinner hidden w-4 h-4 border-2 border-void/40 border-t-void rounded-full animate-spin"></span>
+        <span id="submitBtnText">فعّل النظام الآن</span>
+      </button>
+
+      <div id="formStatus" role="status" aria-live="polite" class="mt-5 text-sm text-center hidden"></div>
+
+      <p id="privacyNote" class="text-xs text-muted text-center mt-5">بياناتك محمية ومعالجة وفق أنظمة PDPL. لن نشاركها مع أي طرف ثالث.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-white/5 py-10 px-6 text-center">
+  <p id="fText" class="text-sm text-muted">&copy; 2026 AIAS-Solutions. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script>
+/* ============ الترجمة ============ */
+const translations = {
+  ar: {
+    dir: 'rtl', lang: 'ar', langBtn: 'English',
+    tTitle: "AIAS-Solutions | وحش المبيعات العقاري الذكي",
+    metaDesc: "بوت مبيعات عقاري بالذكاء الاصطناعي يؤهل عملاءك تلقائياً على مدار الساعة لشركات العقارات في دبي والرياض.",
+    navLogin: "تسجيل الدخول", navCta: "احجز عرضاً تجريبياً",
+    heroEyebrow: "مبني خصيصاً لسوق العقارات في دبي والرياض",
+    heroTitleHtml: 'بوت عقاري ذكي يضاعف مبيعاتك <span class="text-transparent bg-clip-text bg-gradient-to-l from-neon to-neondeep">ولا يترك عميلاً بلا رد</span>',
+    heroDesc: "AIAS-Solutions يبني لك مساعد مبيعات بالذكاء الاصطناعي يتحدث لغة السوق العقاري، يفهم مشاريع الأوف-بلان وجداول الدفع، ويؤهّل كل عميل محتمل تلقائياً على واتساب وموقعك — على مدار الساعة.",
+    ctaPrimary: "احجز عرضاً تجريبياً مجانياً", ctaSecondary: "جرّب البوت العقاري الآن",
+    stat1: "ارتفاع نسبة تأهيل العملاء", stat2: "وقت الرد الأول", stat3: "تغطية كاملة بلا توقف",
+    demoLabel: "محادثة مباشرة — واتساب",
+    typingFull: "مرحباً، أبحث عن شقة في مشروع Creek Harbour، ميزانيتي حوالي 2 مليون درهم",
+    leadBadge: "🔥 جاهز للاتصال", leadL1: "الميزانية", leadL2: "المشروع", leadL3: "القناة",
+    fEyebrow: "لماذا AIAS-Solutions", fTitle: "مصمم لسوق العقارات الخليجي تحديداً",
+    c1Title: "يفهم لهجة السوق ومصطلحات الأوف-بلان",
+    c1Desc: "يتعامل البوت بلهجة عربية خليجية طبيعية، ويفهم مصطلحات مثل \"أوف-بلان\" وجداول الدفع ونسب الـROI لكل مشروع دون أي التباس.",
+    c2Title: "تصفية العملاء الجادين تلقائياً",
+    c2Desc: "يميّز البوت من أول رسالة بين المتصفح والعميل الجاد عبر أسئلة ذكية عن الميزانية والجدول الزمني، ويمنح كل عميل درجة جاهزية فورية.",
+    c3Title: "تسليم بطاقة عميل جاهزة للاتصال",
+    c3Desc: "بمجرد تأهيل العميل، تصل فريق المبيعات بطاقة كاملة (الاسم، الميزانية، المشروع، القناة) جاهزة للاتصال المباشر دون أي وقت ضائع.",
+    c4Title: "ممتثل لأنظمة الخصوصية الخليجية (PDPL)",
+    c4Desc: "يعمل البوت وفق أنظمة حماية البيانات الشخصية في الإمارات والسعودية، مع تشفير كامل لبيانات العملاء وسجل موافقات واضح.",
+    dEyebrow: "جاهز للبدء؟", dTitle: "فعّل وحش المبيعات في شركتك خلال 48 ساعة",
+    dDesc: "املأ البيانات وسيتواصل معك فريقنا لجدولة عرض تجريبي مخصص على بيانات مشاريعك العقارية.",
+    lblName: "الاسم الكامل", lblCompany: "اسم الشركة العقارية", lblPhone: "رقم الهاتف / واتساب",
+    errName: "يرجى إدخال الاسم", errPhone: "يرجى إدخال رقم صحيح",
+    submitBtnText: "فعّل النظام الآن", submitBtnSending: "جارٍ الإرسال...",
+    successMsg: "✅ تم استلام طلبك! سيتواصل معك فريقنا خلال 24 ساعة لجدولة العرض التجريبي.",
+    errorMsg: "⚠️ حدث خطأ أثناء الإرسال، حاول مرة أخرى أو تواصل معنا مباشرة عبر واتساب.",
+    privacyNote: "بياناتك محمية ومعالجة وفق أنظمة PDPL. لن نشاركها مع أي طرف ثالث.",
+    fText: "&copy; 2026 AIAS-Solutions. جميع الحقوق محفوظة."
+  },
+  en: {
+    dir: 'ltr', lang: 'en', langBtn: 'عربي',
+    tTitle: "AIAS-Solutions | The Smart Real Estate Sales Beast",
+    metaDesc: "An AI real estate sales bot that qualifies your leads automatically around the clock for real estate companies in Dubai and Riyadh.",
+    navLogin: "Log In", navCta: "Book a Demo",
+    heroEyebrow: "Built specifically for the Dubai & Riyadh real estate market",
+    heroTitleHtml: 'A smart real estate bot that doubles your sales <span class="text-transparent bg-clip-text bg-gradient-to-l from-neon to-neondeep">and never leaves a lead unanswered</span>',
+    heroDesc: "AIAS-Solutions builds you an AI sales assistant that speaks the language of the real estate market, understands off-plan projects and payment plans, and automatically qualifies every lead on WhatsApp and your website — around the clock.",
+    ctaPrimary: "Book a Free Demo", ctaSecondary: "Try the Real Estate Bot Now",
+    stat1: "Lead qualification uplift", stat2: "First response time", stat3: "Full round-the-clock coverage",
+    demoLabel: "Live conversation — WhatsApp",
+    typingFull: "Hi, I'm looking for an apartment in Creek Harbour, my budget is around 2 million AED",
+    leadBadge: "🔥 Ready to Call", leadL1: "Budget", leadL2: "Project", leadL3: "Channel",
+    fEyebrow: "Why AIAS-Solutions", fTitle: "Built specifically for the Gulf real estate market",
+    c1Title: "Understands market slang & off-plan terms",
+    c1Desc: "The bot handles natural Gulf Arabic and English, and understands terms like \"off-plan\", payment schedules, and ROI figures for every project without ambiguity.",
+    c2Title: "Automatically qualifies serious leads",
+    c2Desc: "From the very first message, the bot distinguishes browsers from serious buyers through smart questions about budget and timeline, giving every lead an instant readiness score.",
+    c3Title: "Delivers a ready-to-call client card",
+    c3Desc: "Once a lead is qualified, your sales team instantly receives a full card (name, budget, project, channel) ready for direct contact — with zero time lost.",
+    c4Title: "Compliant with Gulf privacy laws (PDPL)",
+    c4Desc: "The bot operates under UAE and Saudi personal data protection regulations, with full encryption of client data and a clear consent log.",
+    dEyebrow: "Ready to start?", dTitle: "Activate your sales beast within 48 hours",
+    dDesc: "Fill in your details and our team will reach out to schedule a demo tailored to your real estate projects.",
+    lblName: "Full Name", lblCompany: "Real Estate Company Name", lblPhone: "Phone / WhatsApp Number",
+    errName: "Please enter your name", errPhone: "Please enter a valid number",
+    submitBtnText: "Activate Now", submitBtnSending: "Sending...",
+    successMsg: "✅ Request received! Our team will reach out within 24 hours to schedule your demo.",
+    errorMsg: "⚠️ Something went wrong. Please try again or reach us directly on WhatsApp.",
+    privacyNote: "Your data is protected and processed under PDPL regulations. Never shared with third parties.",
+    fText: "&copy; 2026 AIAS-Solutions. All rights reserved."
+  }
+};
+
+const textMap = {
+  navLogin:'text', navCta:'text', heroEyebrow:'text', heroDesc:'text',
+  ctaPrimary:'text', ctaSecondary:'text', stat1:'text', stat2:'text', stat3:'text',
+  demoLabel:'text', leadBadge:'text', leadL1:'text', leadL2:'text', leadL3:'text',
+  fEyebrow:'text', fTitle:'text', c1Title:'text', c1Desc:'text', c2Title:'text', c2Desc:'text',
+  c3Title:'text', c3Desc:'text', c4Title:'text', c4Desc:'text',
+  dEyebrow:'text', dTitle:'text', dDesc:'text', lblName:'text', lblCompany:'text', lblPhone:'text',
+  errName:'text', errPhone:'text', submitBtnText:'text', privacyNote:'text',
+  heroTitle:'html_heroTitleHtml', fText:'html'
+};
+
+function applyLanguage(code){
+  const t = translations[code];
+  const root = document.getElementById('pageRoot');
+  root.setAttribute('dir', t.dir);
+  root.setAttribute('lang', t.lang);
+  document.getElementById('langBtn').textContent = t.langBtn;
+  document.title = t.tTitle;
+  document.getElementById('metaDesc').setAttribute('content', t.metaDesc);
+  document.getElementById('ogTitle').setAttribute('content', t.tTitle);
+  document.getElementById('ogDesc').setAttribute('content', t.metaDesc);
+  document.getElementById('twTitle').setAttribute('content', t.tTitle);
+  document.getElementById('twDesc').setAttribute('content', t.metaDesc);
+
+  Object.keys(textMap).forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const kind = textMap[id];
+    if (kind === 'html') el.innerHTML = t[id];
+    else if (kind && kind.startsWith('html_')) el.innerHTML = t[kind.replace('html_','')];
+    else el.textContent = t[id];
+  });
+
+  const submitTextEl = document.getElementById('submitBtnText');
+  if (submitTextEl && !document.getElementById('submitBtn').classList.contains('is-loading')) {
+    submitTextEl.textContent = t.submitBtnText;
+  }
+
+  // نص فقاعة الدردشة يتحدث فوراً دون إعادة الكتابة
+  if (typingDone) {
+    document.getElementById('typingText').textContent = t.typingFull;
+  }
+
+  localStorage.setItem('aias_re_lang', code);
+}
+
+let currentLang = localStorage.getItem('aias_re_lang') || 'ar';
+applyLanguage(currentLang);
+
+function switchLanguage(){
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  applyLanguage(currentLang);
+}
+
+/* ============ تأثير الكتابة + بطاقة العميل المؤهل ============ */
+let typingDone = false;
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function runTypingSequence(){
+  const el = document.getElementById('typingText');
+  const full = translations[currentLang].typingFull;
+  const leadCard = document.getElementById('leadCard');
+
+  if (prefersReduced) {
+    el.textContent = full;
+    leadCard.classList.remove('opacity-0','translate-y-3');
+    typingDone = true;
+    return;
+  }
+
+  let i = 0;
+  const interval = setInterval(() => {
+    el.textContent = full.slice(0, i);
+    i++;
+    if (i > full.length) {
+      clearInterval(interval);
+      typingDone = true;
+      setTimeout(() => leadCard.classList.remove('opacity-0','translate-y-3'), 300);
+    }
+  }, 35);
+}
+window.addEventListener('load', () => setTimeout(runTypingSequence, 600));
+
+/* ============ ظهور تدريجي عند التمرير ============ */
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
+}
+
+/* ============ نموذج التواصل ============ */
+// ⚠️ استبدل الرابط التالي بنقطة نهاية Formspree أو الـ backend الخاص بكم
+const FORM_ENDPOINT = 'https://formspree.io/f/REPLACE_WITH_YOUR_ID';
+
+const form = document.getElementById('demoForm');
+const submitBtn = document.getElementById('submitBtn');
+const submitBtnText = document.getElementById('submitBtnText');
+const spinner = submitBtn.querySelector('.spinner');
+const formStatus = document.getElementById('formStatus');
+const nameInput = document.getElementById('dName');
+const phoneInput = document.getElementById('dPhone');
+
+function validateForm(){
+  let valid = true;
+  const errName = document.getElementById('errName');
+  const errPhone = document.getElementById('errPhone');
+
+  const nameOk = nameInput.value.trim() !== '';
+  errName.classList.toggle('hidden', nameOk);
+  if (!nameOk) valid = false;
+
+  const phoneOk = phoneInput.value.trim().replace(/[^0-9+]/g,'').length >= 8;
+  errPhone.classList.toggle('hidden', phoneOk);
+  if (!phoneOk) valid = false;
+
+  return valid;
+}
+
+[nameInput, phoneInput].forEach(input => {
+  input.addEventListener('input', () => {
+    document.getElementById(input === nameInput ? 'errName' : 'errPhone').classList.add('hidden');
+  });
+});
+
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
+  formStatus.classList.add('hidden');
+
+  const honeypot = document.getElementById('company_website');
+  if (honeypot && honeypot.value.trim() !== '') return;
+
+  if (!validateForm()) return;
+
+  const t = translations[currentLang];
+  submitBtn.disabled = true;
+  submitBtn.classList.add('is-loading','opacity-80');
+  spinner.classList.remove('hidden');
+  submitBtnText.textContent = t.submitBtnSending;
+
+  try {
+    const response = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    });
+
+    formStatus.classList.remove('hidden');
+    if (response.ok) {
+      formStatus.textContent = t.successMsg;
+      formStatus.className = 'mt-5 text-sm text-center text-emerald-400';
+      form.reset();
+    } else {
+      formStatus.textContent = t.errorMsg;
+      formStatus.className = 'mt-5 text-sm text-center text-red-400';
+    }
+  } catch(err) {
+    formStatus.classList.remove('hidden');
+    formStatus.textContent = t.errorMsg;
+    formStatus.className = 'mt-5 text-sm text-center text-red-400';
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('is-loading','opacity-80');
+    spinner.classList.add('hidden');
+    submitBtnText.textContent = t.submitBtnText;
+  }
+});
+</script>
+
+</body>
+</html>
